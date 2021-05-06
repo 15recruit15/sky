@@ -13,6 +13,11 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
+  username: root
+  password: 
+  host: localhost
+
+  
 
 development:
   <<: *default
@@ -25,6 +30,6 @@ test:
 production:
   <<: *default
   database: sky_production
-  username: <%= Rails.application.credentials.dig(:maria,:username) %>
-  password: <%= Rails.application.credentials.dig(:maria,:password) %>
-  host: <%= Rails.application.credentials.dig(:maria,:host) %> 
+  #username: <%= Rails.application.credentials.dig(:maria,:username) %>
+  #password: <%= Rails.application.credentials.dig(:maria,:password) %>
+  #host: <%= Rails.application.credentials.dig(:maria,:host) %> 
