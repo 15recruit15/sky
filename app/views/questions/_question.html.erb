@@ -1,0 +1,23 @@
+<li id = "question-<%= question.id %>">
+  <% if question.user.image.attached? %>
+    <%= image_tag question.user.image.variant(resize_to_limit: [30, 30]) %>
+  <% else %>
+    <%= image_tag '/default_image.jpg',:size => '50x50',class: "profile-image"  %>
+  <% end %>
+  <span class = "user">
+    <%= link_to question.user.name,question.user %> が
+    <%= l question.created_at, format: :short %>に投稿
+  </span>
+  <span class = "title">
+    <%= link_to question.title, question_path(question) %>
+  </span>
+    <div class = "text-right">
+      <span>
+        <% if current_user?(question.user) %>
+          <%= link_to "削除", question, method: :delete,
+                                         data: { confirm: "削除しますか?" } %>
+        <% end %>
+      </span>
+    </div>
+</li>
+

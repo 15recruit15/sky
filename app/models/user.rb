@@ -13,10 +13,11 @@ class User < ApplicationRecord
   #has_secure_passwordでは追加したバリデーションとは別にオブジェクト生成時に
   #存在性を検証するようになっているため、空のパスワード（nil）が新規ユーザー登録時に
   #有効になることはない。
- validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
-                                      message: "画像フォーマットが不適切です" },
-                      size:         { less_than: 5.megabytes,
-                                      message: "画像サイズは5MB以下である必要があります" }
+  #validates :image,   content_type: { in: %w[image/jpeg image/gif image/png],
+  #                                    message: "画像フォーマットが不適切です" },
+  #                    size:         { less_than: 5.megabytes,message: "画像サイズは5MB以下である必要があります" }
+  
+  
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost

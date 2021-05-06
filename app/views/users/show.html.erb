@@ -1,0 +1,32 @@
+<div class = "container-fluid">
+  <div class="row">
+    <aside class="col-md-2 offset-1">
+      <section class="user-info text-center">
+        <% if @user.image.attached? %>
+          <%= image_tag @user.image,:size => '200x200',class: "profile-image" %>
+        <% else %>
+          <%= image_tag '/default_image.jpg',:size => '200x200',class: "profile-image"  %>
+        <% end %>
+        <span><%= @user.name %></span>
+        <h5>投稿数 <%= @user.questions.count %></h5>
+      </section>
+    </aside>
+    <div class = "questions-all col-md-6 offset-1">
+      <% if @user.questions.any? %>
+        
+        <ol class = "questions">
+          <% @questions.each do |question| %>
+            <%= render question %>
+          <% end %>
+        </ol>
+        <%= paginate @questions %>
+      <% else %>
+        <div class = "show-no-question">
+          <p>まだ投稿がありません。</p>
+          <p>何か記事を書いてみましょう！</p>
+          <%= link_to "記事を投稿する", post_path, class:"btn btn-outline-primary btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

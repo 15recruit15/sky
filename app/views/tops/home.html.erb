@@ -1,2 +1,30 @@
-<h1>Tops#home</h1>
-<p>Find me in app/views/tops/home.html.erb</p>
+<div class = "container-fluid px-0">
+  <% if !logged_in? %>
+    <div class= "title-wrapper blur-content offset-1 col-md-10"> 
+      <div class = "title-box align-items-center d-flex"> 
+        <div class = "title-font col-md-6 offset-3 text-center">
+          <h2>Sky Questは飛行訓練での知識・経験を</h2>
+          <h2>質問・共有するためのサービスです</h2>
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %> 
+  <div class = "row">
+    <div class = "questions-all offset-3 col-md-6">
+      <% if @questions_searched.present? %>
+        <ol class = "questions">
+          <%= render @questions_searched %>
+        </ol>
+        <%= paginate @questions_searched %>
+      <% elsif  !@questions_searched.nil? %>
+        <p class = "text-center">キーワードに一致する記事が見つかりませんでした。</p>
+      <% else %>
+        <ol class = "questions">
+          <%= render @questions %>
+        </ol>
+        <%= paginate @questions %>
+      <% end %>
+    </div>
+  </div>
+</div>
