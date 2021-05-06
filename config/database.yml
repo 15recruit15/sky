@@ -30,6 +30,6 @@ test:
 production:
   <<: *default
   database: sky_production
-  #username: <%= Rails.application.credentials.dig(:maria,:username) %>
-  #password: <%= Rails.application.credentials.dig(:maria,:password) %>
-  #host: <%= Rails.application.credentials.dig(:maria,:host) %> 
+  username: <%= Rails.application.credentials.dig(:maria,:username) %>
+  password: <%= Rails.application.credentials.dig(:maria,:password) %>
+  host: <%= Rails.application.credentials.dig(:maria,:host) %> 
