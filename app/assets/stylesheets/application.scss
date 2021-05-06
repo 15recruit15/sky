@@ -1,0 +1,208 @@
+
+@import "bootstrap";
+
+/* Navbar */
+.header_image{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+}
+.navbar-brand{
+  font-size: 1.5rem !important;
+  margin-left: 10px;    
+}
+
+/* universe */
+.container-fluid{
+  min-height: 100vh;
+  padding: 50px 0;
+  background-image: url("/Airplane.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+.blur-content{
+  backdrop-filter: blur(30px);
+  border-radius: 20px;
+  padding: 30px;
+}
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+/* content */
+.title-wrapper{
+  padding-bottom: 30px ;
+
+}
+.title-box{
+  height: 300px;
+  margin-bottm: 50px;
+  h2{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+}
+
+.questions-all{
+  background-color: white;
+  color: black;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+
+
+/* aside-profile */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  color: black;
+  section {
+    padding: 10px 0;
+    margin-top: 30px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    h5 {
+      font-size: 0.7em;
+      text-align: center;
+      margin-bottom: 3px;
+      padding-top: 10px;
+      border-top: 1px solid;
+    }
+    .profile-image{
+      margin: 20px 0;
+    }
+  }
+}
+
+
+/* error */
+#error_explanation {
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+/* form関連 */
+.form-title{
+  padding: 1em 0;
+}
+
+.arrange-form{
+  .btn{
+    margin: 1em 0;
+  }
+  .form-control{
+    margin-bottom: 1em;
+  }
+}
+
+
+.user-info{
+  background-color: white;
+  font-size: 2em;
+  padding-top: 20px;
+  h5{
+    margin-top: 7px;
+  } 
+}
+
+
+/* エラー */
+#error_explanation {
+  color: red;
+  ul {
+    margin: 0 0 30px 0;
+  }
+}
+
+/*questions */
+.questions{
+  list-style: none;
+  padding: 0;
+  li{
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user{
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .title{
+    display: block;
+    margin-left: 55px;
+    font-size: 1.5em;
+    img{
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+}
+.show-no-question{
+  text-align: center;
+  padding-top: 2em;
+  p{
+    font-size: 2em;
+  }
+}
+
+.image_input_btn{
+    display: block;
+    background-color: #228B22;
+
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-top: 2px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.image_form{
+  display: none;
+}
+
+.form-zone{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.show-wrapper{
+  background-color: white;
+  color: black;
+  .title{
+    display: block;
+    font-size: 1.8em;
+    padding: 5px 0;
+    border-bottom: 1px solid black;
+  }
+  .content{
+    display: block;
+    padding: 10px 0;
+    font-size: 1.2em;
+  }
+
+}
+
+.field{
+  margin-bottom: 10px;
+}
