@@ -1,11 +1,23 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  title: ダッフンダ
+  content: セスナ
+  created_at: <%= 10.minutes.ago %>
+  user: michael
 
-one:
-  user: one
-  content: MyText
-  title: MyString
+tau_manifesto:
+  title: 大喜利
+  content: ボーイング
+  created_at: <%= 3.years.ago %>
+  user: michael
 
-two:
-  user: two
-  content: MyText
-  title: MyString
+cat_video:
+  title: サロンパス
+  content: affadfdfa
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+most_recent:
+  title: あfdsファ
+  content: エアバス
+  created_at: <%= Time.zone.now %>
+  user: michael

@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     flash[:success] = "投稿が削除されました"
-    redirect_to user_path(@question.user.id)
+    redirect_to user_path(@question.user)
   end
   
   def new

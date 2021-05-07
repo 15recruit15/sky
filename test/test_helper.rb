@@ -11,4 +11,22 @@ class ActiveSupport::TestCase
    include ApplicationHelper
 
   # Add more helper methods to be used by all tests here...
+  
+  def t_logged_in?
+    !session[:user_id].nil?
+  end
+  
+  def t_log_in(user)
+    session[:user_id] = user.id
+  end
+  
 end
+
+  
+  class ActionDispatch::IntegrationTest
+    # テストユーザーとしてログインする。Integration用
+    def t_log_in(user, password: 'password')
+      post login_path, params: { session: { email: user.email,
+                                          password: password }} 
+    end
+  end
