@@ -1,10 +1,18 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark d-flex justify-content-between" style= "background-color: #003366;">
-    <%= link_to "Sky Quest", root_path, class: "navbar-brand" %>
-    <%= form_tag(search_path,:method => 'get',:class => "form-inline") do %>
-      <input name = "search" type="search" class="form-control mr-2 mt-3" placeholder="キーワードを入力" aria-label="キーワードを入力">
-      <button type="submit" class="btn btn-primary ">検索</button>
-    <% end %>
+  <nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style= "background-color: #003366;">
+    <%= link_to "Sky Quest",root_path, class: "navbar-brand" %>
+
+    <div class="dropdown navbar-nav ml-auto mr-2">
+      <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+        <i class="fas fa-search"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right p-0">
+        <%= form_tag(search_path,:method => 'get',:class => "form-inline dropdown-item p-1 rounded") do %>
+          <input name = "search" type="search" class="form-control mr-0" placeholder="キーワードを入力" aria-label="キーワードを入力">
+          <button type="submit" class="btn btn-outline-primary ml-0">検索</button>
+        <% end %>
+      </div>
+    </div>
     
     <ul class="navbar-nav">
         <% if logged_in? %>

@@ -1,8 +1,8 @@
 <div class = "container-fluid">
-  <div class = "show-wrapper col-md-6 offset-3">
+  <div class = "show-wrapper col-md-6 offset-md-3">
     <span class = "user">
       <% if @question.user.image.attached? %>
-        <%= image_tag question.user.image.variant(resize_to_limit: [50, 50]) %>
+        <%= image_tag @question.user.image,:size => '50x50',class: "profile-image" %>
       <% else %>
         <%= image_tag '/default_image.jpg',:size => '50x50',class: "profile-image"  %>
       <% end %>

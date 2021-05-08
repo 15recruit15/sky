@@ -1,11 +1,16 @@
-
 @import 'bootstrap';
+
+*{
+  @bodersizing: border-box;
+}
+
 /* Navbar */
 .header_image{
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
+
 .navbar-brand{
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   margin-left: 10px;    
 }
 
@@ -18,43 +23,45 @@
   background-attachment: fixed;
   color: white;
 }
+
+
 .blur-content{
   backdrop-filter: blur(30px);
   border-radius: 20px;
   padding: 30px;
 }
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
+  margin-bottom: 0px;
 }
 
 
 /* content */
 .title-wrapper{
-  padding-bottom: 30px ;
-
-}
-.title-box{
-  height: 300px;
-  margin-bottm: 50px;
-  h2{
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 10px;
+  margin-bottom: 30px;
+  .title-box{
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+    margin-bottm: 40px;
+    h2{
+      color: white;
+      margin-bottom: 10px;
+    }
+    .title-font{
+      font-size: 2vw;
+    }
   }
 }
 
 .questions-all{
-  background-color: white;
+  background-color: rgba(255,255,255,0.9);
   color: black;
-  padding-bottom: 30px;
-  margin-top: 30px;
-  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 0px;
+  border-radius: 5px
 }
 
 
@@ -85,12 +92,13 @@ aside {
       padding-top: 10px;
       border-top: 1px solid;
     }
-    .profile-image{
-      margin: 20px 0;
-    }
   }
 }
 
+.profile-image{
+  margin: 20px 0;
+  border-radius: 50%; 
+}
 
 /* error */
 #error_explanation {
@@ -120,7 +128,7 @@ aside {
 
 
 .user-info{
-  background-color: white;
+  background-color: rgba(255,255,255,0.9);
   font-size: 2em;
   padding-top: 20px;
   h5{
@@ -141,6 +149,7 @@ aside {
 .questions{
   list-style: none;
   padding: 0;
+  border-radius: 5px;
   li{
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -160,13 +169,14 @@ aside {
   }
 
 }
+
 .show-no-question{
-  text-align: center;
-  padding-top: 2em;
-  p{
-    font-size: 2em;
+    text-align: center;
+    padding-top: 2em;
+    p{
+      font-size: 2vw;
+    }
   }
-}
 
 .image_input_btn{
     display: block;
@@ -192,7 +202,7 @@ aside {
 }
 
 .show-wrapper{
-  background-color: white;
+  background-color: rgba(255,255,255,0.9);
   color: black;
   .title{
     display: block;

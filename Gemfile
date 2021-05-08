@@ -16,8 +16,8 @@ gem 'webpacker',  '5.3.0'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
-gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
+gem 'bootstrap',  '4.3.0'
+gem 'jquery-rails', '4.4.0'
 
 group :production do
     gem 'unicorn', '6.0.0'
