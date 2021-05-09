@@ -1,7 +1,7 @@
 <%= form_with(model: @question, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div>
-    <%= f.text_field :title, placeholder: "タイトルを入力" ,class:'field' %>
+    <%= f.text_field :title, placeholder: "タイトルを入力" ,class:'mb-3 py-1' %>
     <%= f.text_area :content, size: "30x10",placeholder: "投稿内容を入力" %>
   </div>
   <div class = "form-zone">

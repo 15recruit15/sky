@@ -3,7 +3,7 @@
     <aside class="col-md-2 offset-md-1">
       <section class="user-info text-center">
         <% if @user.image.attached? %>
-          <%= image_tag @user.image,:size => '200x200',class: "profile-image" %>
+          <%= image_tag @user.image,:size => '200x200',class: "profile-image img-fluid" %>
         <% else %>
           <%= image_tag '/default_image.jpg',:size => '200x200',class: "profile-image img-fluid"  %>
         <% end %>

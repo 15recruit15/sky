@@ -1,10 +1,8 @@
 @import 'bootstrap';
 
-*{
-  @bodersizing: border-box;
-}
+*{@bodersizing: border-box;}
 
-/* Navbar */
+/* Header */
 .header_image{
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
 }
@@ -21,9 +19,9 @@
   background-image: url("/Airplane.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
   color: white;
 }
-
 
 .blur-content{
   backdrop-filter: blur(30px);
@@ -38,24 +36,17 @@ input, textarea, select, .uneditable-input {
 }
 
 
-/* content */
+/* tops#home */
 .title-wrapper{
   margin-bottom: 30px;
-  .title-box{
-    padding-left: 0;
-    padding-right: 0;
-    height: 100%;
-    margin-bottm: 40px;
-    h2{
-      color: white;
-      margin-bottom: 10px;
-    }
-    .title-font{
-      font-size: 2vw;
-    }
-  }
+  padding-top: 40px;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 2vw;
 }
 
+
+/* tops#home,users#show 記事一覧表示*/
 .questions-all{
   background-color: rgba(255,255,255,0.9);
   color: black;
@@ -63,11 +54,33 @@ input, textarea, select, .uneditable-input {
   padding-top: 0px;
   border-radius: 5px
 }
+/* 記事一つ一つのスタイル */
+.questions{
+  list-style: none;
+  padding: 0;
+  border-radius: 5px;
+  li{
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user{
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .title{
+    display: block;
+    margin-left: 55px;
+    font-size: 1.5em;
+    img{
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+}
 
 
-
-/* aside-profile */
-
+/* users#show */
 aside {
   section.user_info {
     margin-top: 20px;
@@ -95,93 +108,50 @@ aside {
   }
 }
 
+/* ユーザーの画像表示 */
 .profile-image{
-  margin: 20px 0;
+  margin: 1rem 0;
   border-radius: 50%; 
-}
-
-/* error */
-#error_explanation {
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-.alert{
-  margin-bottom: 0  !important;
 }
 
 /* form関連 */
 .form-title{
-  padding: 1em 0;
+  padding: 1rem 0;
 }
 
 .arrange-form{
   .btn{
-    margin: 1em 0;
+    margin: 1rem 0;
   }
   .form-control{
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 }
 
-
+/* users#show */
 .user-info{
   background-color: rgba(255,255,255,0.9);
-  font-size: 2em;
-  padding-top: 20px;
+  font-size: 2rem;
+  padding-top: 1rem;
   h5{
-    margin-top: 7px;
+    margin-top: 0.5rem;
   } 
 }
 
 
-/* エラー */
-#error_explanation {
-  color: red;
-  ul {
-    margin: 0 0 30px 0;
-  }
-}
-
-/*questions */
-.questions{
-  list-style: none;
-  padding: 0;
-  border-radius: 5px;
-  li{
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user{
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .title{
-    display: block;
-    margin-left: 55px;
-    font-size: 1.5em;
-    img{
-      display: block;
-      padding: 5px 0;
-    }
-  }
-
-}
-
+/* users#show, 投稿がない時 */
 .show-no-question{
     text-align: center;
-    padding-top: 2em;
+    padding-top: 2rem;
     p{
       font-size: 2vw;
     }
   }
 
+/* 画像選択ボタン */
 .image_input_btn{
     display: block;
     background-color: #228B22;
-
     height: 30px;
     margin-top: 10px;
     border-radius: 5px;
@@ -191,33 +161,29 @@ aside {
     cursor: pointer;
     text-align: center;
 }
-
 .image_form{
   display: none;
 }
 
+/* formの幅を親要素の半分、中央にする*/
 .form-zone{
   width: 50%;
   margin: 0 auto;
 }
 
+/* questions#show 記事詳細画面 */
 .show-wrapper{
   background-color: rgba(255,255,255,0.9);
   color: black;
   .title{
     display: block;
-    font-size: 1.8em;
-    padding: 5px 0;
+    font-size: 1.8rem;
+    padding: 0.3rem 0;
     border-bottom: 1px solid black;
   }
   .content{
     display: block;
-    padding: 10px 0;
-    font-size: 1.2em;
+    padding: 0.8rem;
+    font-size: 1.2rem;
   }
-
-}
-
-.field{
-  margin-bottom: 10px;
 }

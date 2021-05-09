@@ -2,11 +2,9 @@
   <% if !logged_in? %>
     <div class = "row mt-3">
       <div class= "title-wrapper blur-content offset-sm-2 col-sm-8 text-center">
-          <div class = "title-box"> 
-              <h2 class = "title-font">Sky Questは飛行訓練での知識・経験を</h2>
-              <h2 class = "title-font">質問・共有するためのサービスです</h2>
-              <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-outline-info title-font" %>
-          </div>
+              <h2>Sky Questは飛行訓練での知識・経験を</h2>
+              <h2>質問・共有するためのサービスです</h2>
+              <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-outline-info" %>
       </div>
     </div>
   <% end %> 
