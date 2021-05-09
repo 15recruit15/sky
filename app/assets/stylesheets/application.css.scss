@@ -1,7 +1,5 @@
 @import 'bootstrap';
 
-*{@bodersizing: border-box;}
-
 /* Header */
 .header_image{
     border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
@@ -9,8 +7,10 @@
 
 .navbar-brand{
   font-size: 1.5rem;
-  margin-left: 10px;    
+  margin-left: 10px;   
 }
+
+
 
 /* universe */
 .container-fluid{
