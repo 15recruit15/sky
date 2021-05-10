@@ -11,7 +11,7 @@
     </span>
     <span class = "title"><%= @question.title %></span>
     <div class = "content">
-      <p><%= @question.content %></p>
+      <%= simple_format(@question.content) %>
       <%= image_tag @question.image,:size => '300x300',class: "question-image" if @question.image.attached? %>
     </div>
   </div>
