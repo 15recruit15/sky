@@ -1,5 +1,5 @@
 <div class = "container-fluid">
-  <div class = "show-wrapper col-md-6 offset-md-3">
+  <div class = "show-wrapper col-md-8 offset-md-2">
     <span class = "user">
       <% if @question.user.image.attached? %>
         <%= image_tag @question.user.image,:size => '50x50',class: "profile-image" %>
@@ -10,10 +10,10 @@
       <%= l @question.created_at, format: :short %>に投稿
     </span>
     <span class = "title"><%= @question.title %></span>
-    <span class = "content">
-      <%= @question.content %>
-      <%= image_tag @question.image.variant(resize_to_limit: [500, 500]) if @question.image.attached? %>
-    </span>
+    <div class = "content">
+      <p><%= @question.content %></p>
+      <%= image_tag @question.image,:size => '300x300',class: "img-fluid" if @question.image.attached? %>
+    </div>
   </div>
 </div>
 
