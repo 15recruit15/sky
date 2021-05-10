@@ -12,7 +12,7 @@
     <span class = "title"><%= @question.title %></span>
     <div class = "content">
       <p><%= @question.content %></p>
-      <%= image_tag @question.image,:size => '300x300',class: "img-fluid" if @question.image.attached? %>
+      <%= image_tag @question.image,:size => '300x300',class: "question-image" if @question.image.attached? %>
     </div>
   </div>
 </div>
