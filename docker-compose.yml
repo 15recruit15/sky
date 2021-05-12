@@ -13,7 +13,7 @@ services:
     build:
       context: .
       dockerfile: docker/rails/Dockerfile 
-    command: unicorn_rails -c /var/www/rails/sky/config/unicorn.conf.rb -D -E production  #rails s -p 8080 -b '0.0.0.0'
+    command: unicorn_rails -c  /myproject/config/unicorn.conf.rb -D -E production  #rails s -p 8080 -b '0.0.0.0'
     volumes:
       - .:/myproject #ホストのRailsアプリをバインドマウントする。
       - tmp-data:/myproject/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
@@ -39,4 +39,4 @@ services:
 volumes:
   public-data:
   tmp-data:
-  maria-db:
+  #maria-db:
