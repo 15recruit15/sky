@@ -1,6 +1,10 @@
-  $worker  = 2
+ $worker  = 2
   $timeout = 30
-  $app_dir = "/var/www/rails/sky" 
+  if Rails.env.development? || Rails.env.test?
+    $app_dir = "/myproject" 
+  elsif Rails.env.production?
+    $app_dir = "/var/www/rails/sample" 
+  end 
   $listen  = File.expand_path 'tmp/sockets/.unicorn.sock', $app_dir
   $pid     = File.expand_path 'tmp/pids/unicorn.pid', $app_dir
   $std_log = File.expand_path 'log/unicorn.log', $app_dir

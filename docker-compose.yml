@@ -1,0 +1,42 @@
+version: '3.8' #実行時点での最新バージョン
+services:
+  db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+    ports:
+      - "3306:3306"
+    volumes:
+      - maria-db:/var/lib/mysql #データベースを保存する名前付きVolumesを定義
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/rails/Dockerfile 
+    command: rails s -p 8080 -b '0.0.0.0'
+    volumes:
+      - .:/myproject #ホストのRailsアプリをバインドマウントする。
+      - tmp-data:/myproject/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
+      - public-data:/myproject/public #publicデータをnginxと共有  
+    ports:
+      - "8080:8080"
+    links:
+      - db
+
+  nginx:
+    build:
+      context: docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    restart: always #明示的にstopさせるまでリスタートする。（失敗するたび遅延あり）
+    volumes:
+      - tmp-data:/myproject/tmp/sockets
+      - public-data:/myproject/public
+    depends_on:
+      - web 
+
+volumes:
+  public-data:
+  tmp-data:
+  maria-db:
