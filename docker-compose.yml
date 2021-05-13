@@ -13,7 +13,9 @@ services:
     build:
       context: .
       dockerfile: docker/rails/Dockerfile 
-    command: unicorn_rails -c  /myproject/config/unicorn.conf.rb -D -E production  #rails s -p 8080 -b '0.0.0.0'
+    command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec unicorn -c /myproject/config/unicorn.conf.rb -D -E production  #rails s -p 8080 -b '0.0.0.0'
+    tty: true
+    stdin_open: true   
     volumes:
       - .:/myproject #ホストのRailsアプリをバインドマウントする。
       - tmp-data:/myproject/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
