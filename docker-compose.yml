@@ -1,33 +1,20 @@
 version: '3.8' #実行時点での最新バージョン
 services:
-  #db:
-    #image: mariadb:10.5
-    #environment:
-    #  MYSQL_ROOT_PASSWORD: "123456"
-    #ports:
-    #  - "3306:3306"
-    #volumes:
-    #  - maria-db:/var/lib/mysql #データベースを保存する名前付きVolumesを定義
-
   web:
     build:
-      context: .
+      context: . #sampleディレクトリ
       dockerfile: docker/rails/Dockerfile 
-    command: dockerize -wait tcp://db:3306 -timeout 20s bundle exec unicorn -c /myproject/config/unicorn.conf.rb -D -E production  #rails s -p 8080 -b '0.0.0.0'
-    tty: true
-    stdin_open: true   
+    command: /bin/sh -c "rm -f /myproject/tmp/pids/server.pid && bundle exec unicorn -c /myproject/config/unicorn.conf.rb -D -E production"
     volumes:
       - .:/myproject #ホストのRailsアプリをバインドマウントする。
       - tmp-data:/myproject/tmp/sockets #ソケット通信用ファイルをnginxコンテナと共有
       - public-data:/myproject/public #publicデータをnginxと共有  
-    #ports:
-    #  - "8080:8080"
-    #links:
-    #  - db
+    tty: true
+    stdin_open: true 
 
   nginx:
     build:
-      context: docker/nginx
+      context: .docker/nginx
       dockerfile: Dockerfile
     ports:
       - 80:80
@@ -41,4 +28,3 @@ services:
 volumes:
   public-data:
   tmp-data:
-  #maria-db:
