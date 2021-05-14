@@ -22,7 +22,10 @@ https://skyquest-japan-pilot.com
   - RDS
   - ELB
 
- ![SkyQuest-Portfolio](https://user-images.githubusercontent.com/82098752/118239241-77265780-b4d4-11eb-96af-4b925465b833.jpg)
+
+## インフラ環境
+![SkyQuest-Portfolio (1)](https://user-images.githubusercontent.com/82098752/118239952-5ca0ae00-b4d5-11eb-9233-872432447857.jpg)
+
 
 ## 機能一覧
 - 記事一覧投稿機能
