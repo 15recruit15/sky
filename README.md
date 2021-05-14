@@ -15,11 +15,14 @@ https://skyquest-japan-pilot.com
 - MariaDB 10.2
 - Nginx
 - Unicorn
+- Docker (開発環境)
 - AWS
   - EC2
   - Route53
   - RDS
   - ELB
+
+ ![SkyQuest-Portfolio](https://user-images.githubusercontent.com/82098752/118239241-77265780-b4d4-11eb-96af-4b925465b833.jpg)
 
 ## 機能一覧
 - 記事一覧投稿機能
@@ -34,6 +37,8 @@ https://skyquest-japan-pilot.com
 - 単体テスト機能
 - 統合テスト機能
 
+
+
 ## 学習記録
 - Progate
 - Linux標準教科書 (LPI Japan)
@@ -41,3 +46,4 @@ https://skyquest-japan-pilot.com
 - たのしいRuby (SBクリエイティブ)
 - Railsチュートリアル (Yass Lab)
 - 基礎からのネットワーク&サーバー構築 (日経BP)
+- Docker実践コンテナ開発入門 
