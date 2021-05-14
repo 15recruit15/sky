@@ -2,17 +2,11 @@ FROM ruby:2.6.3
 
 ENV BUNDLER_VERSION 2.1.4
 
-# build-essentialをインストール
-RUN apt-get update && apt-get install -y --no-install-recommends build-essential wget curl apt-transport-https
+RUN curl https://deb.nodesource.com/setup_12.x | bash \
+  && curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-#yarn をインストール
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -  \
- && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list\
- && apt-get install -y yarn
-
-# Node.jsをインストール
-RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -\
- && apt-get install -y nodejs
+RUN apt-get update && apt-get install -y --no-install-recommends nodejs yarn build-essential
                              
 RUN mkdir /myproject
 ENV APP_ROOT /myproject
